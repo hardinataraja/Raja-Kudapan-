@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Raja Kudapan 🍜 — Pesan Online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body id="page-user">
+  <header>
+    <h1>Raja Kudapan 🍜</h1>
+    <p>Pesan makanan favoritmu, praktis & cepat</p>
+  </header>
+
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h2>Daftar Menu</h2>
+      <div style="display:flex;gap:8px;">
+        <button class="btn-ghost" id="btnReset">Reset Keranjang</button>
+        <button class="btn-ghost" id="btnStatus">Cek Status</button>
+      </div>
+    </div>
+
+    <section class="grid" id="menuList"></section>
+  </div>
+
+  <div class="cart-floating" id="cartBtn">
+    Keranjang <span class="badge" id="cartCount">0</span>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal-wrap" id="checkoutWrap">
+    <div class="modal">
+      <h3>Checkout</h3>
+      <div id="cartItems"></div>
+      <p>Total: <strong>Rp <span id="cartTotal">0</span></strong></p>
+      <label>Nama</label>
+      <input id="nama">
+      <label>Alamat</label>
+      <textarea id="alamat"></textarea>
+      <button class="btn-ghost" id="btnLoc">📍 Bagikan Lokasi</button>
+      <label>No. WhatsApp</label>
+      <input id="nohp">
+      <div style="margin-top:10px;display:flex;justify-content:space-between">
+        <button class="btn-ghost" onclick="closeCheckout()">Batal</button>
+        <button class="btn" id="lanjutBayar">Lanjut Bayar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status Modal -->
+  <div class="modal-wrap" id="statusWrap">
+    <div class="modal" style="max-width:500px;position:relative">
+      <button class="btn-ghost" id="closeStatus" style="position:absolute;top:10px;right:10px;">✖</button>
+      <h3>Status Pesanan</h3>
+      <p>Kode: <strong id="kodePesanan"></strong> <button class="btn-ghost" id="copyKode">📋</button></p>
+      <div id="statusSteps"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./assets/script.js"></script>
+</body>
+</html>
